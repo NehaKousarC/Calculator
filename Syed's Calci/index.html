@@ -4,10 +4,20 @@
 <head>
     <title>Calculator</title>
     <style>
-    
+        body {
+            background-color: #fff;
+            font-family: Arial, sans-serif;
+        }
+
         .calculator {
             width: 270px;
             margin: 100px auto;
+            padding: 20px;
+            border: 2px solid black;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            background-color: #f9f9f9;
         }
 
         #result {
@@ -15,6 +25,11 @@
             height: 40px;
             font-size: 20px;
             text-align: right;
+            margin-bottom: 15px;
+            padding: 5px 10px;
+            border: 2px solid #000;
+            border-radius: 5px;
+            box-sizing: border-box;
         }
 
         .btn {
@@ -22,8 +37,18 @@
             height: 50px;
             font-size: 20px;
             margin: 5px;
+            border: 1px solid #000;
+            border-radius: 5px;
+            background-color: #e0e0e0;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #ccc;
         }
     </style>
+
 </head>
 
 <body>
@@ -60,18 +85,15 @@
 
                     let value = buttons[i].getAttribute('data-value');
 
-                    if (value === "C") 
-                    {
+                    if (value === "C") {
                         document.getElementById("result").value = "";
                     }
-                    else if (value === "=") 
-                    {
+                    else if (value === "=") {
                         let expression = document.getElementById("result").value;
                         let answer = eval(expression);
                         document.getElementById("result").value = answer;
                     }
-                    else 
-                    {
+                    else {
                         document.getElementById("result").value += value;
                     }
                 });
