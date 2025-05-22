@@ -60,15 +60,18 @@
 
                     let value = buttons[i].getAttribute('data-value');
 
-                    if (value === "C") {
+                    if (value === "C") 
+                    {
                         document.getElementById("result").value = "";
                     }
-                    else if (value === "=") {
+                    else if (value === "=") 
+                    {
                         let expression = document.getElementById("result").value;
                         let answer = eval(expression);
                         document.getElementById("result").value = answer;
                     }
-                    else {
+                    else 
+                    {
                         document.getElementById("result").value += value;
                     }
                 });
