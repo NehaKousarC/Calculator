@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Simple Calculator</title>
+    <style>
+    
+        .calculator {
+            width: 270px;
+            margin: 100px auto;
+        }
+
+        #result {
+            width: 100%;
+            height: 40px;
+            font-size: 20px;
+            text-align: right;
+        }
+
+        .btn {
+            width: 50px;
+            height: 50px;
+            font-size: 20px;
+            margin: 5px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="calculator">
+        <input type="text" id="result" disabled><br><br>
+
+        <button class="btn" data-value="7">7</button>
+        <button class="btn" data-value="8">8</button>
+        <button class="btn" data-value="9">9</button>
+        <button class="btn" data-value="+">+</button><br>
+
+        <button class="btn" data-value="4">4</button>
+        <button class="btn" data-value="5">5</button>
+        <button class="btn" data-value="6">6</button>
+        <button class="btn" data-value="-">-</button><br>
+
+        <button class="btn" data-value="1">1</button>
+        <button class="btn" data-value="2">2</button>
+        <button class="btn" data-value="3">3</button>
+        <button class="btn" data-value="*">*</button><br>
+
+        <button class="btn" data-value="0">0</button>
+        <button class="btn" data-value="C">C</button>
+        <button class="btn" data-value="=">=</button>
+        <button class="btn" data-value="/">/</button>
+
+        <script>
+            let buttons = document.querySelectorAll('.btn');
+
+            for (let i = 0; i < buttons.length; i++) {
+
+                buttons[i].addEventListener('click', function () {
+
+                    let value = buttons[i].getAttribute('data-value');
+
+                    if (value === "C") {
+                        document.getElementById("result").value = "";
+                    }
+                    else if (value === "=") {
+                        let expression = document.getElementById("result").value;
+                        let answer = eval(expression);
+                        document.getElementById("result").value = answer;
+                    }
+                    else {
+                        document.getElementById("result").value += value;
+                    }
+                });
+            }
+        </script>
+
+    </div>
