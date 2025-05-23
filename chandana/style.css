@@ -15,17 +15,14 @@ body {
 
 .display {
   margin-bottom: 10px;
+
 }
 
 #display {
-  width: 100%;
+  width: 90%;
   padding: 10px;
   font-size: 20px;
-}
-
-#stored {
-  font-size: 14px;
-  color: #888;
+  
 }
 
 .buttons {
